@@ -9,6 +9,8 @@ var darwin=require('./models/model');
 var mongoose=require('mongoose');
 var path    = require("path");
 
+var port = process.env.PORT || 8000;
+
 
 //
 // cloudinary.config({
@@ -27,7 +29,7 @@ mongoose.connect("mongodb://akash:akash@ds259255.mlab.com:59255/darwins",{useMon
 mongoose.Promise=global.Promise;
 
 
-app.listen(3000);
+app.listen(8000);
 app.set('view engine', 'ejs');
 
 
