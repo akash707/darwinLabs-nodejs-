@@ -1,0 +1,29 @@
+
+<%-include partials/header.ejs%>
+
+
+<body>
+
+  <div align="center">
+  <div class="pmd-card pmd-card-default pmd-z-depth-3 pmd-card-custom-form ">
+      <div class="pmd-card-title">
+          <h1 class="pmd-card-title-text">All Searched Keywords History</h1>
+      </div>
+  </div>
+  </div>
+
+
+
+<div class="col-sm-8" style="margin-left:2%;" >
+
+<% for(var i=0;i<data.length;i++){%>
+  <br>
+<span  class="badge badge-success pmd-ripple-effect"><%=i+1%></span>
+<a href="/search/<%=data[i].search_keyword%>">
+  <div style="margin-top:2%; margin-left:2%;" class="pmd-chip pmd-chip-no-icon"><%=data[i].search_keyword%> <a class="pmd-chip-action" href="/search/<%=data[i].search_keyword%>">
+  	<i class="material-icons">arrow_forward</i></a>
+  </div></a>
+<%}%>
+
+</div>
+</body>

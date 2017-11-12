@@ -1,0 +1,23 @@
+
+<%-include partials/header.ejs%>
+
+
+<div class="pmd-card pmd-card-default pmd-z-depth-3 pmd-card-custom-form ">
+    <div class="pmd-card-title">
+        <h3 style="color:green;"><b>Result For : <b><%=keyword%></h3>
+    </div>
+</div>
+
+<% for(var i=0;i<data.length;i++)
+var search_result=data[i].search_results;
+{%>
+
+
+<% for(var i=0;i<search_result.length;i++){%>
+  <div style="float:left; margin-left:4%;">
+    <img style="border-radius:5%; 	filter: grayscale(100%); border:2px solid green; height:170px; margin-top:4%;"  src="/images/<%=search_result[i]%>" width="200px;" >
+    </div>
+  </div>
+<%}%>
+
+<%}%>

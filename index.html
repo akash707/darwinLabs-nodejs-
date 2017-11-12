@@ -1,0 +1,111 @@
+<html>
+<head>
+<title> Welcome To Image Search </title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://unblase.herokuapp.com/static/propeller/css/propeller.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://unblase.herokuapp.com/static/propeller/js/propeller.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  <script src="/angular_app.js"></script>
+
+
+  <nav class="navbar navbar-inverse pmd-navbar pmd-z-depth">
+<div class="container-fluid">
+ <!-- Brand and toggle get grouped for better mobile display -->
+ <div class="navbar-header">
+
+   <a href="/home" class="navbar-brand">Home</a>
+ </div>
+
+
+<div class="pmd-sidebar-overlay"></div>
+</nav>
+
+
+</head>
+
+<body ng-app="myApp">
+
+
+  <br>
+
+  <div ng-controller="myCtrl">
+
+  <div class="row" >
+
+  <div class="col-sm-1">
+  </div>
+
+
+    <div class="col-sm-2 ">
+      <div class="pmd-card pmd-card-inverse  pmd-z-depth-5 pmd-card-custom-form">
+      <div class="pmd-card-title">
+          <h2 align="center">Search History</h2>
+          <br>
+          <div align="center">
+          <i style="color:#fff;" class="material-icons md-dark pmd-md">search</i>
+        </div>
+  <br>
+          <div align="center" style="margin-top:3%;">
+        <a href="/search"><button type="submit" class="btn pmd-btn-outline pmd-ripple-effect btn-success">click Here</button></a>
+  </div>
+  <br>
+
+      </div>
+  </div>
+    </div>
+
+
+  <div class="col-sm-7">
+    <div class="pmd-card pmd-card-default pmd-z-depth-5 pmd-card-custom-form ">
+        <div class="pmd-card-title">
+            <h1 class="pmd-card-title-text" style="color:green;" align="center">Welcome To Image Search </h1>
+  <br>
+  <form  ng-submit="myForm(data);result=true">
+            <div class="form-group">
+              <br>
+    	<label for="regular1" class="control-label"> <h4> <i class="material-icons md-dark pmd-sm">search</i> Image That You Want To Search :</h4></label>
+    	<input type="text" id="regular1" placeholder="Type Here " ng-model="data.Image" name="image" required class="form-control">
+      <br>
+      <div align="center">
+      <button type="submit" class="btn pmd-btn-outline pmd-ripple-effect btn-success">Image Search</button>
+    </div>
+    </div>
+  </form>
+
+        </div>
+    </div>
+  </div>
+
+
+
+  <div class="col-sm-2">
+  </div>
+
+
+<br>
+<br>
+</div>
+
+<div ng-if="result" class="alert alert-success " role="alert">
+	<h3><b>About 15 results</b><h3>
+</div>
+
+
+
+
+
+
+
+<div ng-if="result"  ng-repeat="url in data" style="float:left; margin-left:5%;">
+  <img style="filter: grayscale(100%); border-radius:5%; border:2px solid green; height:170px; margin-top:4%;" src="{{url}}" width="200px;" >
+  </div>
+</div>
+
+
+
+
+
+</body>
